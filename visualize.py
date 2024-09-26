@@ -39,14 +39,14 @@ def visualize_graph1(G, highlight_nodes=None, highlight_edges=None, title="Graph
     pos = nx.spring_layout(subgraph, k=2, iterations=50)
     
     # Draw the subgraph
-    nx.draw(subgraph, pos, with_labels=True, node_color='lightblue', node_size=1000, font_size=8, arrows=True)
+    nx.draw(subgraph, pos, with_labels=True, node_size=1000, font_size=8, arrows=True)
     
     if highlight_nodes:
         nx.draw_networkx_nodes(subgraph, pos, nodelist=nodes_to_draw, node_color='red', node_size=400)
         
         # Add labels to show traversal order
         labels = {node: node for node in (nodes_to_draw)}
-        nx.draw_networkx_labels(subgraph, pos, labels, font_size=10, font_color="white")
+        nx.draw_networkx_labels(subgraph, pos, labels, font_size=10, font_color="black")
     
     if highlight_edges:
         edges_in_subgraph = [edge for edge in highlight_edges if edge[0] in nodes_to_draw and edge[1] in nodes_to_draw]
@@ -63,7 +63,7 @@ def visualize_graph2(G, highlight_nodes=None, highlight_edges=None, title="Graph
     pos = nx.spring_layout(G, k=2, iterations=50)
     
     # Draw the full graph
-    nx.draw(G, pos, with_labels=True, node_color='lightblue', node_size=1000, font_size=8, arrows=True)
+    nx.draw(G, pos, with_labels=True, node_size=1000, font_size=8, arrows=True)
     
     if highlight_nodes:
         # If there are many highlight_nodes, we'll only highlight a subset
@@ -72,7 +72,7 @@ def visualize_graph2(G, highlight_nodes=None, highlight_edges=None, title="Graph
         
         # Add labels to highlight order
         labels = {node: node for node in (highlight_subset)}
-        nx.draw_networkx_labels(G, pos, labels, font_size=10, font_color="white")
+        nx.draw_networkx_labels(G, pos, labels, font_size=10, font_color="black")
     
     if highlight_edges:
         nx.draw_networkx_edges(G, pos, edgelist=highlight_edges, edge_color='r', width=2)
