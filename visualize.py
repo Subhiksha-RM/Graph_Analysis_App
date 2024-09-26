@@ -71,7 +71,7 @@ def visualize_graph2(G, highlight_nodes=None, highlight_edges=None, title="Graph
         nx.draw_networkx_nodes(G, pos, nodelist=highlight_subset, node_color='red', node_size=400)
         
         # Add labels to highlight order
-        labels = {node: str(i+1) for i, node in enumerate(highlight_subset)}
+        labels = {node: node for node in (highlight_subset)}
         nx.draw_networkx_labels(G, pos, labels, font_size=10, font_color="white")
     
     if highlight_edges:
