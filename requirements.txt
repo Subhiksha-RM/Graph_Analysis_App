@@ -1,0 +1,6 @@
+streamlit
+networkx
+matplotlib
+numpy
+memory_profiler
+scipy
