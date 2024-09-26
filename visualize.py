@@ -39,7 +39,7 @@ def visualize_graph1(G, highlight_nodes=None, highlight_edges=None, title="Graph
     pos = nx.spring_layout(subgraph, k=2, iterations=50)
     
     # Draw the subgraph
-    nx.draw(subgraph, pos, with_labels=True, node_size=1000, font_size=8, arrows=True)
+    nx.draw(subgraph, pos, arrows=True)
     
     if highlight_nodes:
         nx.draw_networkx_nodes(subgraph, pos, nodelist=nodes_to_draw, node_color='red', node_size=400)
@@ -63,7 +63,7 @@ def visualize_graph2(G, highlight_nodes=None, highlight_edges=None, title="Graph
     pos = nx.spring_layout(G, k=2, iterations=50)
     
     # Draw the full graph
-    nx.draw(G, pos, with_labels=True, node_size=1000, font_size=8, arrows=True)
+    nx.draw(G, pos,arrows=True)
     
     if highlight_nodes:
         # If there are many highlight_nodes, we'll only highlight a subset
